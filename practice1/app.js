@@ -65,6 +65,7 @@ const server = http.createServer((req,res)=>{
             res.writeHead(500,{"Content-Type":"text/plain;charset=UTF-8"});
             res.end('서버 연결 오류');
           }
+          res.writeHead(200,{"Content-Type":"text/html; charset=UTF-8"});
         });
       });
     } else {
