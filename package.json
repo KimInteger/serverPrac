@@ -1,0 +1,11 @@
+{
+  "name": "server-prac",
+  "version": "1.0.0",
+  "description": "\"서버만드는거 연습하는 폴더\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "김인티저",
+  "license": "MIT"
+}
