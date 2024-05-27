@@ -52,6 +52,8 @@ const server = http.createServer((req,res)=>{
         const parsedData = qs.parse(body);
         const pName = parsedData.postName;
         const pHobby = parsedData.postHobby;
+
+        fs.writeFile(주소,내용,(err)=>{});
       });
     } else {
 
