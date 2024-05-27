@@ -49,7 +49,7 @@ const server = http.createServer((req,res)=>{
         body += chunk.toString();
       });
       req.on('end',()=>{
-  
+        const parsedData = qs.parse(body);
       });
     } else {
 
