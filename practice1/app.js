@@ -59,6 +59,10 @@ const server = http.createServer((req,res)=>{
             res.end('서버 연결 오류');
           }
         });
+
+        fs.readFile(경로,(err,data)=>{
+          
+        });
       });
     } else {
 
