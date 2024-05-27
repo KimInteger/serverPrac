@@ -24,7 +24,9 @@ const server = http.createServer((req,res)=>{
       const hobby = encodeData.hobby;
 
       fs.writeFile(`./${name}.txt`,hobby,(err)=>{
-        
+        if(err){
+          res.writeHead(500, {"Content-Type":"text/plain; charset=UTF-8"});
+        }
       });
     } else {
       res.writeHead(404, {"Content-Type":"text/plain; charset=UTF-8"});
