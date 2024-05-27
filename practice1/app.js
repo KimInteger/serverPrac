@@ -10,7 +10,9 @@ const server = http.createServer((req,res)=>{
   if(req.method === 'GET'){
     if(req.url === '/'){
       fs.readFile('./public/index.html', (err,data)=>{
-        
+        if(err){
+          res.writeHead(500, {"Content-Type":"text/plain; charset=UTF-8"});
+        }
       })
     }
   }
