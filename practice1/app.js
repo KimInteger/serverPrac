@@ -31,7 +31,9 @@ const server = http.createServer((req,res)=>{
       });
 
       fs.readFile('./public/index.html',(err,data)=>{
-
+        if (err) {
+          
+        }
       });
     } else {
       res.writeHead(404, {"Content-Type":"text/plain; charset=UTF-8"});
