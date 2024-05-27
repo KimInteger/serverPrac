@@ -22,6 +22,8 @@ const server = http.createServer((req,res)=>{
       let encodeData = qs.parse(formData);
       const name = encodeData.name;
       const hobby = encodeData.hobby;
+      console.log(name);
+      console.log(hobby);
     } else {
       res.writeHead(404, {"Content-Type":"text/plain; charset=UTF-8"});
       res.end("페이지를 찾을 수 없습니다.");
