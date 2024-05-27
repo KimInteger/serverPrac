@@ -61,7 +61,9 @@ const server = http.createServer((req,res)=>{
         });
 
         fs.readFile(path.join(__dirname,'public','index.html'),(err,data)=>{
-
+          if(err){
+            
+          }
         });
       });
     } else {
