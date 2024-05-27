@@ -50,6 +50,7 @@ const server = http.createServer((req,res)=>{
       });
       req.on('end',()=>{
         const parsedData = qs.parse(body);
+        console.log(parsedData);
       });
     } else {
 
