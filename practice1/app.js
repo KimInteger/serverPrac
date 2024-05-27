@@ -45,7 +45,7 @@ const server = http.createServer((req,res)=>{
   } else if (req.method === 'POST') {
 
   } else {
-    
+    res.writeHead(404,{"Content-Type":"text/plain; charset=UTF-8"});
   }
 });
 
