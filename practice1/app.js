@@ -45,7 +45,7 @@ const server = http.createServer((req,res)=>{
   } else if (req.method === 'POST') {
     let body = '';
     req.on('data',(chunk)=>{
-      
+      body += chunk.toString();
     });
 
   } else {
