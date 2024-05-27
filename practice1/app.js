@@ -12,10 +12,10 @@ const server = http.createServer((req,res)=>{
 
 const PORT = 3000;
 
-server.listen(3000,(err)=>{
+server.listen(PORT,(err)=>{
   if(err){
     console.error(err);
   }
   console.log("서버가동확인용");
-  console.log('http://localhost:3000');
+  console.log(`http://localhost:${PORT}`);
 })
