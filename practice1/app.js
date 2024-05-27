@@ -29,6 +29,10 @@ const server = http.createServer((req,res)=>{
           res.end('서버 연결 오류');
         }
       });
+
+      fs.readFile('./public/index.html',(err,data)=>{
+
+      });
     } else {
       res.writeHead(404, {"Content-Type":"text/plain; charset=UTF-8"});
       res.end("페이지를 찾을 수 없습니다.");
