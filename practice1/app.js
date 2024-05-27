@@ -50,7 +50,8 @@ const server = http.createServer((req,res)=>{
       });
       req.on('end',()=>{
         const parsedData = qs.parse(body);
-        console.log(parsedData);
+        const pName = parsedData.postName;
+        const pHobby = parsedData.postHobby;
       });
     } else {
 
