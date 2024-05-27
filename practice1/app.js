@@ -7,7 +7,11 @@ const qs = require('node:querystring');
 const path = require('node:path');
 
 const server = http.createServer((req,res)=>{
-  if(req.method === 'GET'){}
+  if(req.method === 'GET'){
+    if(req.url === '/'){
+      
+    }
+  }
 });
 
 const PORT = 3000;
