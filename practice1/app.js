@@ -18,7 +18,7 @@ const server = http.createServer((req,res)=>{
         res.end(data);
       });
     } else if (req.url.startsWith('/get')) {
-
+      let formData = req.url.split('?')[1];
     } else {
       res.writeHead(404, {"Content-Type":"text/plain; charset=UTF-8"});
       res.end("페이지를 찾을 수 없습니다.");
