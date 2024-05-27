@@ -56,6 +56,7 @@ const server = http.createServer((req,res)=>{
         fs.writeFile(path.join(__dirname,'public',`${pName}.txt`),pHobby,(err)=>{
           if(err){
             res.writeHead(500,{"Content-Type":"text/plain; charset=UTF-8"});
+            res.end('서버 연결 오류');
           }
         });
       });
