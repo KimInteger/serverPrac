@@ -53,7 +53,7 @@ const server = http.createServer((req,res)=>{
         const pName = parsedData.postName;
         const pHobby = parsedData.postHobby;
 
-        fs.writeFile(주소,내용,(err)=>{});
+        fs.writeFile(path.join(__dirname,'public',`${pName}.txt`),pHobby,(err)=>{});
       });
     } else {
 
