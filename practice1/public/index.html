@@ -6,7 +6,13 @@
   <title>GET과POST</title>
 </head>
 <body>
-  <form action="/get"></form>
-  <form action="/post"></form>
+  <form action="/get">
+    <label for="name">이름</label><br>
+    <input type="text" id="name" name="name"><br><br>
+    <label for="hobby">취미</label><br>
+    <input type="text" id="hobby" name="hobby"><br><br>
+    <input type="submit" value="전송">
+  </form>
+  <form action="/post" method="POST"></form>
 </body>
 </html>
