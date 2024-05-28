@@ -54,7 +54,7 @@ const server = http.createServer((req,res)=>{
         console.log(parseData);
         // post형식으로 받아옴을 확인.
         res.writeHead(200,{"Content-Type":"text/plain; charset=UTF-8"});
-        res.end(`${parseData}데이터를 감지했도다!`);
+        res.end(`${parseData.name}데이터를 감지했도다!`);
       });
     } else {
       res.writeHead(404,{"Content-Type":"text/plain;charset=UTF-8"});
