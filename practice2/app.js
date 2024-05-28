@@ -34,6 +34,11 @@ const server = http.createServer((req,res)=>{
           console.error(err);
         }
       });
+
+      const file = fs.readFileSync('./public/index.html','utf8');
+
+      res.writeHead(200, {"Content-Type":"text/html;charset=UTF-8"});
+      res.end(file);
     } else {
 
     }
