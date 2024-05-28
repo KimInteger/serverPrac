@@ -49,6 +49,10 @@ const server = http.createServer((req,res)=>{
       req.on('data',(chunk)=>{
         body += chunk.toString();
       });
+      req.on('end',()=>{
+        const parseData = qs.parse(body);
+        console.log(parseData);
+      });
     } else {
       res.writeHead(404,{"Content-Type":"text/plain;charset=UTF-8"});
       res.end('페이지를 찾을 수 없습니다.');
