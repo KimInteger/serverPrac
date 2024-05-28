@@ -22,7 +22,7 @@ const server = http.createServer((req,res)=>{
       });
     } else if (req.url.startsWith('/get')) {
       let data = req.url.split('?')[1];
-      console.log(data);
+      const parsedData = qs.parse(data);
     } else {
 
     }
