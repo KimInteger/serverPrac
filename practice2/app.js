@@ -53,6 +53,11 @@ const server = http.createServer((req,res)=>{
         const parseData = qs.parse(body);
         console.log(parseData);
         // post형식으로 받아옴을 확인.
+        fs.writeFile(path.join(__dirname,'writeFile',`${parseData.name}.txt`),parseData.hobby,(err)=>{
+          if (err) {
+            console.error(err);
+          }
+        });
         res.writeHead(200,{"Content-Type":"text/plain; charset=UTF-8"});
         res.end(`${parseData.name}데이터를 감지했도다!`);
       });
