@@ -9,7 +9,6 @@ const path = require('node:path');
 const PORT = 3000;
 
 const server = http.createServer((req,res)=>{
-  console.log(req.url);
   if (req.method === 'GET') {
 
   } else if (req.method === 'POST') {
