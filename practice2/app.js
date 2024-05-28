@@ -16,5 +16,7 @@ server.listen(PORT,(err)=>{
   if(err){
     console.error(err);
   }
+  console.log('서버 가동 중입니다.');
+  console.log(`http://localhost:${PORT}`);
 });
 
