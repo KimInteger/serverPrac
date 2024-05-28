@@ -17,6 +17,8 @@ const server = http.createServer((req,res)=>{
           res.end("서버 연결 오류");
           return;
         }
+        res.writeHead(200, {"Content-Type":"text/html; charset=UTF-8"});
+        res.end(data);
       });
     } else if (req.url === 'get') {
 
