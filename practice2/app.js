@@ -23,6 +23,17 @@ const server = http.createServer((req,res)=>{
     } else if (req.url.startsWith('/get')) {
       let data = req.url.split('?')[1];
       const parsedData = qs.parse(data);
+
+      const jsonData = {
+        name : parsedData.Gname,
+        hobby : parsedData.Ghobby
+      }
+
+      fs.writeFile(path.join(__dirname,'writeFile',`${parsedData.Gname}.txt`),JSON.stringify(jsonData,null,2),(err)=>{
+        if(err){
+          console.error(err);
+        }
+      });
     } else {
 
     }
