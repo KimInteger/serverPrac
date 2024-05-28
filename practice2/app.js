@@ -12,3 +12,9 @@ const server = http.createServer((req,res)=>{
   console.log(1);
 });
 
+server.listen(PORT,(err)=>{
+  if(err){
+    console.error(err);
+  }
+});
+
