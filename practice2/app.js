@@ -11,11 +11,15 @@ const PORT = 3000;
 const server = http.createServer((req,res)=>{
   if (req.method === 'GET') {
     if (req.url === '/') {
-
+      fs.readFile('./public/index.html', (err,data)=>{
+        if(err){
+          
+        }
+      });
     } else if (req.url === 'get') {
 
     } else {
-      
+
     }
   } else if (req.method === 'POST') {
 
