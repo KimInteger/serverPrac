@@ -22,8 +22,28 @@ const server = http.createServer((req,res)=>{
     } else if (req.url.startsWith('/get')) {
       let getData = req.url.split('?')[1];
       let decodeData = qs.decode(getData);
-      console.log(getData);
-      console.log(decodeData);
+
+      let jsonData = {
+        name : decodeData.name,
+        hobby : decodeData.hobby
+      };
+
+      fs.writeFile(path.join(__dirname,'public',`${decodeData.name}.txt`),JSON.stringify(jsonData,null,2),(err)=>{
+        if (err) {
+          console.error(err);
+        } else {
+          fs.readFile(path.join(__dirname,'public','index.html'),(err,data)=>{
+            if (err) {
+              res.writeHead(500,{"Content-Type":"text/plain; charset=UTF-8"});
+              res.end("서버 자체 에러");
+              return;
+            } else {
+              res.writeHead(200,{"Content-Type":"text/html; charset=UTF-8"});
+              res.end(data);
+            }
+          });
+        }
+      })
     } else {
       res.writeHead(404,{"Content-Type":"text/plain;charset=UTF-8"});
       res.end('페이지를 찾을 수 없습니다.');  
