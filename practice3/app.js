@@ -7,7 +7,14 @@ const qs = require('node:querystring');
 const path = require('node:path');
 
 const server = http.createServer((req,res)=>{
-  console.log('서버확인');
+  if(req.method === 'GET'){
+
+  } else if (req.method = 'POST') {
+
+  } else {
+    res.writeHead(404,{"Content-Type":"text/plain;charset=UTF-8"});
+    res.end('페이지를 찾을 수 없습니다.');
+  }
 });
 
 server.listen(3000,(err)=>{
