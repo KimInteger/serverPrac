@@ -54,8 +54,25 @@ const server = http.createServer((req,res)=>{
       req.on('data',(chunk)=>{
         body += chunk.toString();
       });
-      req.end('end',()=>{
+      req.on('end',()=>{
+        const parseData = qs.parse(body);
         
+        fs.writeFile(path.join(__dirname,'public',`${parseData.name}.txt`), parseData.hobby, (err)=>{
+          if (err) {
+            console.error(err);
+          } else {
+            fs.readFile(path.join(__dirname,'public','index.html'),(err,data)=>{
+              if (err) {
+                res.writeHead(500,{"Content-Type":"text/plain; charset=UTF-8"});
+                res.end("서버 자체 에러");
+                return;
+              } else {
+                res.writeHead(200,{"Content-Type":"text/html; charset=UTF-8"});
+                res.end(data);
+              }
+            });
+          }
+        })
       });
     } else {
       res.writeHead(404,{"Content-Type":"text/plain;charset=UTF-8"});
