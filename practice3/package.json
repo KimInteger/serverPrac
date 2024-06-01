@@ -1,0 +1,11 @@
+{
+  "name": "practice3",
+  "version": "1.0.0",
+  "description": "\"하루 한번 GET POST연습\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "KimInteger",
+  "license": "MIT"
+}
