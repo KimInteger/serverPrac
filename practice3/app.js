@@ -19,6 +19,11 @@ const server = http.createServer((req,res)=>{
           res.end(data);
         }
       });
+    } else if (req.url.startsWith('/get')) {
+      let getData = req.url.split('?')[1];
+      let decodeData = qs.decode(getData);
+      console.log(getData);
+      console.log(decodeData);
     } else {
       res.writeHead(404,{"Content-Type":"text/plain;charset=UTF-8"});
       res.end('페이지를 찾을 수 없습니다.');  
