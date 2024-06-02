@@ -17,7 +17,9 @@ function notFound(res){
 const server = http.createServer((req,res)=>{
   if (req.method === 'GET') {
     if (req.url === '/') {
-
+      fs.readFile(path.join(__dirname,'public','index.html'),(err,data)=>{
+        
+      });
     } else if (req.url.startsWith('/get')) {
 
     } else {
