@@ -16,11 +16,21 @@ function notFound(res){
 
 const server = http.createServer((req,res)=>{
   if (req.method === 'GET') {
+    if (req.url === '/') {
 
+    } else if (req.url.startsWith('/get')) {
+
+    } else {
+      notFound(res);
+    }
   } else if (req.method === 'POST') {
+    if (req.url === '/post') {
 
+    } else {
+      notFound(res);
+    }
   } else {
-
+    notFound(res);
   }
 });
 
