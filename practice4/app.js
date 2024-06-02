@@ -9,7 +9,13 @@ const path = require('node:path');
 const PORT = process.env.PORT || 8080;
 
 const server = http.createServer((req,res)=>{
-  console.log(1);
+  if (req.method === 'GET') {
+
+  } else if (req.method === 'POST') {
+
+  } else {
+
+  }
 });
 
 server.listen(PORT,(err)=>{
