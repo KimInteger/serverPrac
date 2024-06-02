@@ -8,6 +8,11 @@ const path = require('node:path');
 
 const PORT = process.env.PORT || 8080;
 
+function notFound(res){
+  
+}
+
+
 const server = http.createServer((req,res)=>{
   if (req.method === 'GET') {
 
