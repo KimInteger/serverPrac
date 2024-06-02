@@ -62,6 +62,10 @@ const server = http.createServer((req,res)=>{
       req.on('data',(chunk)=>{
         body += chunk.toString();
       });
+      req.on('end',()=>{
+        const parsedData = qs.parse(body);
+        console.log(parsedData);
+      });
     } else {
       notFound(res);
     }
