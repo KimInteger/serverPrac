@@ -29,7 +29,8 @@ const server = http.createServer((req,res)=>{
       });
     } else if (req.url.startsWith('/get')) {
       let getData = req.url.split('?')[1];
-      console.log(getData);
+      let decodeData = qs.decode(getData);
+      console.log(decodeData);
     } else {
       notFound(res);
     }
