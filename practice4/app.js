@@ -59,6 +59,9 @@ const server = http.createServer((req,res)=>{
   } else if (req.method === 'POST') {
     if (req.url === '/post') {
       let body = '';
+      req.on('data',(chunk)=>{
+        body += chunk.toString();
+      });
     } else {
       notFound(res);
     }
