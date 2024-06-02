@@ -58,7 +58,7 @@ const server = http.createServer((req,res)=>{
     }
   } else if (req.method === 'POST') {
     if (req.url === '/post') {
-
+      let body = '';
     } else {
       notFound(res);
     }
