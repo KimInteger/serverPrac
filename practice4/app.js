@@ -35,6 +35,23 @@ const server = http.createServer((req,res)=>{
         name : decodeData['게임명'],
         feature : decodeData['특징']
       }
+
+      fs.writeFile(path.join(__dirname,'public',`${objData.name}.txt`),JSON.stringify(objData,null,2),(err)=>{
+        if (err) {
+          console.error(`${err}발생!`);
+        } else {
+          fs.readFile(path.join(__dirname,'public','index.html'),(err,data)=>{
+            if (err) {
+              res.writeHead(500,{"Content-Type":"text/plain; charset=UTF-8"});
+              res.end('서버 자체 에러');
+              return;
+            } else {
+              res.writeHead(200, {"Content-Type":"text/html;charset=UTF-8"});
+              res.end(data);
+            }
+          });
+        }
+      });
       console.log(objData);
     } else {
       notFound(res);
