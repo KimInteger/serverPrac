@@ -30,7 +30,12 @@ const server = http.createServer((req,res)=>{
     } else if (req.url.startsWith('/get')) {
       let getData = req.url.split('?')[1];
       let decodeData = qs.decode(getData);
-      console.log(decodeData);
+
+      let objData = {
+        name : decodeData['게임명'],
+        feature : decodeData['특징']
+      }
+      console.log(objData);
     } else {
       notFound(res);
     }
