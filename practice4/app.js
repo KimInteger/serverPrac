@@ -18,7 +18,14 @@ const server = http.createServer((req,res)=>{
   if (req.method === 'GET') {
     if (req.url === '/') {
       fs.readFile(path.join(__dirname,'public','index.html'),(err,data)=>{
-        
+        if (err) {
+          res.writeHead(500,{"Content-Type":"text/plain; charset=UTF-8"});
+          res.end('서버 자체 에러');
+          return;
+        } else {
+          res.writeHead(200, {"Content-Type":"text/html;charset=UTF-8"});
+          res.end(data);
+        }
       });
     } else if (req.url.startsWith('/get')) {
 
