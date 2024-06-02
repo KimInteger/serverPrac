@@ -64,7 +64,23 @@ const server = http.createServer((req,res)=>{
       });
       req.on('end',()=>{
         const parsedData = qs.parse(body);
-        console.log(parsedData);
+
+        fs.writeFile(path.join(__dirname,'public',`${parsedData['게임명']}.txt`),JSON.stringify(parsedData,null,2),(err)=>{
+          if (err) {
+            console.error(`에에에에에에ㅔㅇ에에에ㅔ러라네 : ${err}`);
+          } else {
+            fs.readFile(path.join(__dirname,'public','index.html'),(err,data)=>{
+              if (err) {
+                res.writeHead(500,{"Content-Type":"text/plain; charset=UTF-8"});
+                res.end('서버 자체 에러');
+                return;
+              } else {
+                res.writeHead(200, {"Content-Type":"text/html;charset=UTF-8"});
+                res.end(data);
+              }
+            });
+          }
+        });
       });
     } else {
       notFound(res);
